@@ -38,6 +38,7 @@
 		9A27B97F2418DEE9003AED7C /* UnimplementedLoadingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedLoadingController.swift; sourceTree = "<group>"; };
 		9A27B9812418DEFF003AED7C /* UnimplementedErrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedErrorController.swift; sourceTree = "<group>"; };
 		9A27B9832418DF18003AED7C /* UnimplementedEmptyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedEmptyController.swift; sourceTree = "<group>"; };
+		9A27B9892418E2C6003AED7C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		9A8C61A7217348FB00C3CC38 /* StatefulViewManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StatefulViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8C61AA217348FB00C3CC38 /* StatefulViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatefulViewManager.h; sourceTree = "<group>"; };
 		9A8C61AB217348FB00C3CC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		9A8C619D217348FB00C3CC38 = {
 			isa = PBXGroup;
 			children = (
+				9A27B9892418E2C6003AED7C /* Package.swift */,
 				9A8C624C2173582100C3CC38 /* SVMExample.xcodeproj */,
 				9A8C61A9217348FB00C3CC38 /* StatefulViewManager */,
 				9A8C61B4217348FB00C3CC38 /* StatefulViewManagerTests */,
