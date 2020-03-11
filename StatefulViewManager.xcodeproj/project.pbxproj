@@ -7,18 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A27B9802418DEE9003AED7C /* UnimplementedLoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27B97F2418DEE9003AED7C /* UnimplementedLoadingController.swift */; };
+		9A27B9822418DEFF003AED7C /* UnimplementedErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27B9812418DEFF003AED7C /* UnimplementedErrorController.swift */; };
+		9A27B9842418DF18003AED7C /* UnimplementedEmptyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27B9832418DF18003AED7C /* UnimplementedEmptyController.swift */; };
 		9A8C61B1217348FB00C3CC38 /* StatefulViewManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8C61A7217348FB00C3CC38 /* StatefulViewManager.framework */; };
 		9A8C61B6217348FB00C3CC38 /* StatefulViewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C61B5217348FB00C3CC38 /* StatefulViewManagerTests.swift */; };
 		9A8C61B8217348FB00C3CC38 /* StatefulViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A8C61AA217348FB00C3CC38 /* StatefulViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A8C61E721734B9A00C3CC38 /* StatefulViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C61E621734B9A00C3CC38 /* StatefulViewManager.swift */; };
-		9A8C625A21735A2A00C3CC38 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C625921735A2A00C3CC38 /* LoadingView.swift */; };
-		9A8C625D21735A3600C3CC38 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C625C21735A3600C3CC38 /* LoadingView.xib */; };
-		9A8C626021735BA900C3CC38 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C625F21735BA900C3CC38 /* UIView+Extensions.swift */; };
-		9A8C6264217376B600C3CC38 /* ReloadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C6263217376B600C3CC38 /* ReloadingView.swift */; };
-		9A8C626721737ABC00C3CC38 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C626621737ABC00C3CC38 /* ErrorView.xib */; };
-		9A8C626921737ADB00C3CC38 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C626821737ADB00C3CC38 /* ErrorView.swift */; };
-		9A8C626C21737DAE00C3CC38 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C626B21737DAE00C3CC38 /* EmptyView.swift */; };
-		9A8C626E21737DE000C3CC38 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A8C626D21737DE000C3CC38 /* EmptyView.xib */; };
+		9A8C626021735BA900C3CC38 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C625F21735BA900C3CC38 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A27B97F2418DEE9003AED7C /* UnimplementedLoadingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedLoadingController.swift; sourceTree = "<group>"; };
+		9A27B9812418DEFF003AED7C /* UnimplementedErrorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedErrorController.swift; sourceTree = "<group>"; };
+		9A27B9832418DF18003AED7C /* UnimplementedEmptyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnimplementedEmptyController.swift; sourceTree = "<group>"; };
 		9A8C61A7217348FB00C3CC38 /* StatefulViewManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StatefulViewManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8C61AA217348FB00C3CC38 /* StatefulViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatefulViewManager.h; sourceTree = "<group>"; };
 		9A8C61AB217348FB00C3CC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,14 +46,7 @@
 		9A8C61B7217348FB00C3CC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A8C61E621734B9A00C3CC38 /* StatefulViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulViewManager.swift; sourceTree = "<group>"; };
 		9A8C624C2173582100C3CC38 /* SVMExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SVMExample.xcodeproj; path = SVMExample/SVMExample.xcodeproj; sourceTree = "<group>"; };
-		9A8C625921735A2A00C3CC38 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		9A8C625C21735A3600C3CC38 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
-		9A8C625F21735BA900C3CC38 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		9A8C6263217376B600C3CC38 /* ReloadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadingView.swift; sourceTree = "<group>"; };
-		9A8C626621737ABC00C3CC38 /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
-		9A8C626821737ADB00C3CC38 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		9A8C626B21737DAE00C3CC38 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
-		9A8C626D21737DE000C3CC38 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		9A8C625F21735BA900C3CC38 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +68,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A27B97D2418DECD003AED7C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9A27B97F2418DEE9003AED7C /* UnimplementedLoadingController.swift */,
+				9A27B9812418DEFF003AED7C /* UnimplementedErrorController.swift */,
+				9A27B9832418DF18003AED7C /* UnimplementedEmptyController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		9A8C619D217348FB00C3CC38 = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +100,8 @@
 		9A8C61A9217348FB00C3CC38 /* StatefulViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				9A27B97D2418DECD003AED7C /* Controllers */,
 				9A8C625E21735B9900C3CC38 /* Extensions */,
-				9A8C62572173598100C3CC38 /* Views */,
 				9A8C61AA217348FB00C3CC38 /* StatefulViewManager.h */,
 				9A8C61AB217348FB00C3CC38 /* Info.plist */,
 				9A8C61E621734B9A00C3CC38 /* StatefulViewManager.swift */,
@@ -124,58 +126,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A8C62572173598100C3CC38 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				9A8C626A21737DA400C3CC38 /* Empty */,
-				9A8C626521737A9000C3CC38 /* Error */,
-				9A8C6262217376AA00C3CC38 /* Reloading */,
-				9A8C62612173769800C3CC38 /* Loading */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		9A8C625E21735B9900C3CC38 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9A8C625F21735BA900C3CC38 /* UIView+Extensions.swift */,
+				9A8C625F21735BA900C3CC38 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		9A8C62612173769800C3CC38 /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				9A8C625921735A2A00C3CC38 /* LoadingView.swift */,
-				9A8C625C21735A3600C3CC38 /* LoadingView.xib */,
-			);
-			path = Loading;
-			sourceTree = "<group>";
-		};
-		9A8C6262217376AA00C3CC38 /* Reloading */ = {
-			isa = PBXGroup;
-			children = (
-				9A8C6263217376B600C3CC38 /* ReloadingView.swift */,
-			);
-			path = Reloading;
-			sourceTree = "<group>";
-		};
-		9A8C626521737A9000C3CC38 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				9A8C626621737ABC00C3CC38 /* ErrorView.xib */,
-				9A8C626821737ADB00C3CC38 /* ErrorView.swift */,
-			);
-			path = Error;
-			sourceTree = "<group>";
-		};
-		9A8C626A21737DA400C3CC38 /* Empty */ = {
-			isa = PBXGroup;
-			children = (
-				9A8C626B21737DAE00C3CC38 /* EmptyView.swift */,
-				9A8C626D21737DE000C3CC38 /* EmptyView.xib */,
-			);
-			path = Empty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +242,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A8C625D21735A3600C3CC38 /* LoadingView.xib in Resources */,
-				9A8C626E21737DE000C3CC38 /* EmptyView.xib in Resources */,
-				9A8C626721737ABC00C3CC38 /* ErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,12 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A8C626921737ADB00C3CC38 /* ErrorView.swift in Sources */,
-				9A8C626021735BA900C3CC38 /* UIView+Extensions.swift in Sources */,
+				9A8C626021735BA900C3CC38 /* UIViewController+Extensions.swift in Sources */,
+				9A27B9842418DF18003AED7C /* UnimplementedEmptyController.swift in Sources */,
+				9A27B9822418DEFF003AED7C /* UnimplementedErrorController.swift in Sources */,
+				9A27B9802418DEE9003AED7C /* UnimplementedLoadingController.swift in Sources */,
 				9A8C61E721734B9A00C3CC38 /* StatefulViewManager.swift in Sources */,
-				9A8C6264217376B600C3CC38 /* ReloadingView.swift in Sources */,
-				9A8C626C21737DAE00C3CC38 /* EmptyView.swift in Sources */,
-				9A8C625A21735A2A00C3CC38 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

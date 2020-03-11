@@ -9,27 +9,35 @@
 import UIKit
 import StatefulViewManager
 
-class ViewController: UIViewController {
-
-    private let viewManager = StatefulViewManager()
-
+private class AwesomeCustomController: UIViewController {}
+private class EmptyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewManager.delegate = self
-
-        viewManager.attach(to: self.view)
-
-//        viewManager.startLoading()
-//        viewManager.finishLoading()
-//        viewManager.startLoading()
-//        viewManager.hasErrored()
-        viewManager.empty()
-
+        view.backgroundColor = .systemPurple
     }
 }
 
-extension ViewController: StatefulViewManagerDelegate {
-    func didSelectRetry() {
-        print(">>> You pressed me")
+class ViewController: UIViewController {
+
+    private let viewManager = StatefulViewManager()
+    private lazy var emptyController = EmptyController()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Attach the current controller to the viewManager
+        viewManager.attach(to: self)
+
+        // Bind all your controllers up.
+        viewManager.bind(controller: emptyController, to: .empty)
+
+        // Call show to `state` show the controller bound to that state
+        viewManager.show(.empty)
+//        viewManager.show(.loading)
+//        viewManager.show(.loaded)
+//        viewManager.show(.error)
+
+//        viewManager.bind(controller: AwesomeCustomController(), to: .custom("login-failed"))
+
     }
 }

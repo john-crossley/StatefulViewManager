@@ -1,113 +1,80 @@
 //
-//  Copyright © 2018 John Crossley. All rights reserved.
+//  Copyright © 2018 - 2020 John Crossley. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-public protocol StatefulViewManagerDelegate: class {
-    func didSelectRetry()
-}
+open class StatefulViewManager {
+    public typealias CustomStateIdentifier = String
 
-public class StatefulViewManager {
-
-    weak var rootView: UIView?
-    public weak var delegate: StatefulViewManagerDelegate?
-
-    private var state: State = .idle
-
-    private lazy var loadingView: LoadingView = {
-        let view: LoadingView = .fromNib()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    private lazy var reloadingView: ReloadingView = {
-        let view = ReloadingView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    private let errorView: ErrorView = {
-        let view: ErrorView = .fromNib()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    private lazy var emptyView: EmptyView = {
-        let view: EmptyView = .fromNib()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    enum State {
-        case idle
-        case loading
-        case loaded
-        case error
-        case empty
+    public enum State: Equatable {
+        case idle, loading, loaded, error, empty
+        case custom(CustomStateIdentifier)
     }
+
+    private(set) var state = State.idle
+
+    private(set) weak var rootController: UIViewController?
+
+    private var loadingController: UIViewController
+    private var errorController: UIViewController
+    private var emptyController: UIViewController
+
+    private var customControllers: [CustomStateIdentifier: UIViewController] = [:]
 
     public init() {
-        #warning("TODO - The ability to set a theme")
-        errorView.delegate = self
+        self.loadingController = UnimplementedLoadingController()
+        self.errorController = UnimplementedErrorController()
+        self.emptyController = UnimplementedEmptyController()
+
+        bind(controller: loadingController, to: .loading)
+        bind(controller: errorController, to: .error)
+        bind(controller: emptyController, to: .empty)
     }
 
-    public func attach(to view: UIView) {
-        self.rootView = view
-    }
+    open func show(_ state: State, animated: Bool = false) {
+        self.state = state
 
-    public func error() {
-        if state == .loaded {
-            return
+        switch state {
+        case .idle: break
+        case .loading: transition(to: loadingController, animated: animated)
+        case .loaded: removeControllers(animated: animated)
+        case .error: transition(to: errorController, animated: animated)
+        case .empty: transition(to: emptyController, animated: animated)
+        // Special case
+        case .custom(let customState):
+            guard let controller = customControllers[customState] else { return }
+            transition(to: controller, animated: animated)
         }
-        state = .error
-        transition(to: errorView)
     }
 
-    public func empty() {
-        state = .empty
-        transition(to: emptyView)
-    }
-
-    public func loading() {
-        defer { state = .loading }
-
-        if state == .loaded {
-            transition(to: reloadingView)
-            return
+    open func bind(controller: UIViewController, to state: State) {
+        switch state {
+        case .idle: break
+        case .loading: loadingController = controller
+        case .loaded: break
+        case .error: errorController = controller
+        case .empty: emptyController = controller
+        case .custom(let customState): customControllers[customState] = controller
         }
-
-        transition(to: loadingView)
     }
 
-    public func loaded() {
-        state = .loaded
-        removeStatusViews()
+    open func attach(to rootController: UIViewController) {
+        self.rootController = rootController
     }
 
-    private func transition(to view: UIView) {
-        guard let rootView = rootView else { return }
-        removeStatusViews()
-
-        rootView.addSubview(view)
-
-        view.leadingAnchor.constraint(equalTo: rootView.leadingAnchor).isActive = true
-        view.topAnchor.constraint(equalTo: rootView.topAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: rootView.bottomAnchor).isActive = true
-        view.trailingAnchor.constraint(equalTo: rootView.trailingAnchor).isActive = true
+    private func transition(to controller: UIViewController, animated: Bool) {
+        guard let rootController = self.rootController else { return }
+        removeControllers(animated: animated)
+        rootController.add(controller, animated: animated)
     }
 
-    private func removeStatusViews() {
-        loadingView.removeFromSuperview()
-        errorView.removeFromSuperview()
-        reloadingView.removeFromSuperview()
-        emptyView.removeFromSuperview()
-    }
-
-}
-
-extension StatefulViewManager: ErrorViewDelegate {
-    func didSelectRetry() {
-        delegate?.didSelectRetry()
+    private func removeControllers(animated: Bool) {
+        loadingController.remove(animated: animated)
+        errorController.remove(animated: animated)
+        emptyController.remove(animated: animated)
+        customControllers.forEach { (_, controller) in
+            controller.remove(animated: animated)
+        }
     }
 }
