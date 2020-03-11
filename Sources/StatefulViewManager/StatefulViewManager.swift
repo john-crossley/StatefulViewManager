@@ -2,6 +2,7 @@
 //  Copyright © 2018 - 2020 John Crossley. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 open class StatefulViewManager {
@@ -78,3 +79,4 @@ open class StatefulViewManager {
         }
     }
 }
+#endif
